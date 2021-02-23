@@ -8,7 +8,12 @@ main() {
 class AskApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
-      home: Text('Olá flutter!'),
+      home: new Scaffold(
+        appBar: new AppBar(
+          title: Text('Questions'),
+        ),
+        body: Text('Any questions'),
+      ),
     );
   }
 }
