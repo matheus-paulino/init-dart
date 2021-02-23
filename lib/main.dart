@@ -6,6 +6,10 @@ main() {
 
 @override
 class AskApp extends StatelessWidget {
+  void response() {
+    print('Pergunta respondida');
+  }
+
   final List<String> questions = [
     'Qual é a sua cor favorita?',
     'Qual é o seu animal favorito'
@@ -22,15 +26,15 @@ class AskApp extends StatelessWidget {
             new Text(questions[0]),
             new RaisedButton(
               child: new Text('Reposta 01'),
-              onPressed: () {},
+              onPressed: response,
             ),
             new RaisedButton(
               child: new Text('Reposta 02'),
-              onPressed: () {},
+              onPressed: response,
             ),
             new RaisedButton(
               child: new Text('Reposta 03'),
-              onPressed: () {},
+              onPressed: response,
             ),
           ],
         ),
