@@ -20,7 +20,7 @@ class QuestionAppState extends State<AskApp> {
   Widget build(BuildContext context) {
     final List<Map<String, Object>> questions = [
       {
-        'question': 'Qual é seu cantor favorito?',
+        'question': 'Qual é sua cor favorita?',
         'reponses': ['Preto', 'Vermelho', 'Verde', 'Branco'],
       },
       {
@@ -28,6 +28,13 @@ class QuestionAppState extends State<AskApp> {
         'reponses': ['Cachorro', 'Girafa', 'Gato', 'Passáro'],
       }
     ];
+
+    List<String> responses = questions[_askSelected]['reponses'];
+    List<Widget> answersWidgets =
+        responses.map((r) => Answer(r, _response)).toList();
+    /* for (String questionAnswer in responses) {
+      answersWidgets.add(Answer(questionAnswer, _response));
+    } */
 
     return new MaterialApp(
       home: new Scaffold(
@@ -37,9 +44,7 @@ class QuestionAppState extends State<AskApp> {
         body: new Column(
           children: <Widget>[
             new Question(questions[_askSelected]['question']),
-            new Answer('Answer 01', _response),
-            new Answer('Answer 02', _response),
-            new Answer('Answer 03', _response),
+            ...answersWidgets
           ],
         ),
       ),
