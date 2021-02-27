@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import './question.dart';
 import 'answer.dart';
+import './result.dart';
+
 
 main() {
   runApp(new AskApp());
@@ -58,12 +60,7 @@ class QuestionAppState extends State<AskApp> {
                   ...responses.map((t) => Answer(t, _response)).toList()
                 ],
               )
-            : Center(
-                child: Text(
-                  'Parabéns!',
-                  style: TextStyle(fontSize: 28),
-                ),
-              ),
+            : Result() 
       ),
     );
   }
