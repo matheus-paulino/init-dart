@@ -58,7 +58,12 @@ class QuestionAppState extends State<AskApp> {
                   ...responses.map((t) => Answer(t, _response)).toList()
                 ],
               )
-            : null,
+            : Center(
+                child: Text(
+                  'Parabéns!',
+                  style: TextStyle(fontSize: 28),
+                ),
+              ),
       ),
     );
   }
