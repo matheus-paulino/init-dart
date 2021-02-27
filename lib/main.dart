@@ -13,11 +13,21 @@ class QuestionAppState extends State<AskApp> {
   final List<Map<String, Object>> _questions = const [
     {
       'question': 'Qual é sua cor favorita?',
-      'reponses': ['Preto', 'Vermelho', 'Verde', 'Branco'],
+      'reponses': [
+        {'text': 'Preto', 'points': 8},
+        {'text': 'Vermelho', 'points': 9},
+        {'text': 'Verde', 'points': 10},
+        {'text': 'Branco', 'points': 7},
+      ],
     },
     {
       'question': 'Qual é seu animal favorito?',
-      'reponses': ['Cachorro', 'Girafa', 'Gato', 'Passáro'],
+      'reponses': [
+        {'text': 'Cachorro', 'points': 5},
+        {'text': 'Girafa', 'points': 0},
+        {'text': 'Gato', 'points': 9},
+        {'text': 'Passáro', 'points': 1},
+      ],
     }
   ];
 
