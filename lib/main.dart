@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import 'answer.dart';
+import './quiz.dart';
 import './result.dart';
-
 
 main() {
   runApp(new AskApp());
@@ -29,8 +27,6 @@ class QuestionAppState extends State<AskApp> {
         _askSelected++;
       });
     }
-
-    print(_askSelected);
   }
 
   bool get hasQuestionSelected {
@@ -39,9 +35,6 @@ class QuestionAppState extends State<AskApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> responses =
-        hasQuestionSelected ? _questions[_askSelected]['reponses'] : null;
-
     /* List<Widget> answersWidgets =
         responses.map((r) => Answer(r, _response)).toList(); */
     /* for (String questionAnswer in responses) {
@@ -50,18 +43,16 @@ class QuestionAppState extends State<AskApp> {
 
     return new MaterialApp(
       home: new Scaffold(
-        appBar: new AppBar(
-          title: Text('Questions'),
-        ),
-        body: hasQuestionSelected
-            ? Column(
-                children: <Widget>[
-                  new Question(_questions[_askSelected]['question']),
-                  ...responses.map((t) => Answer(t, _response)).toList()
-                ],
-              )
-            : Result() 
-      ),
+          appBar: new AppBar(
+            title: Text('Questions'),
+          ),
+          body: hasQuestionSelected
+              ? Quiz(
+                  questions: _questions,
+                  answerSelected: _askSelected,
+                  onAnswer: _response,
+                )
+              : Result()),
     );
   }
 }
