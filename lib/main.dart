@@ -66,7 +66,7 @@ class QuestionAppState extends State<AskApp> {
                   answerSelected: _askSelected,
                   onAnswer: _response,
                 )
-              : Result()),
+              : Result(_totalPoints)),
     );
   }
 }
