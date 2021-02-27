@@ -9,6 +9,7 @@ main() {
 
 class QuestionAppState extends State<AskApp> {
   int _askSelected = 0;
+  int _totalPoints = 0;
 
   final List<Map<String, Object>> _questions = const [
     {
@@ -31,11 +32,14 @@ class QuestionAppState extends State<AskApp> {
     }
   ];
 
-  void _response() {
+  void _response(int points) {
     if (hasQuestionSelected) {
       setState(() {
         _askSelected++;
+        _totalPoints += points;
       });
+
+      print(_totalPoints);
     }
   }
 
