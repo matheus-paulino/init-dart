@@ -46,7 +46,7 @@ class QuestionAppState extends State<AskApp> {
   void _resetQuiz() {
     setState(() {
       _askSelected = 0;
-      _totalPoints - 0;
+      _totalPoints = 0;
     });
   }
 
