@@ -43,6 +43,13 @@ class QuestionAppState extends State<AskApp> {
     }
   }
 
+  void _resetQuiz() {
+    setState(() {
+      _askSelected = 0;
+      _totalPoints - 0;
+    });
+  }
+
   bool get hasQuestionSelected {
     return _askSelected < _questions.length;
   }
@@ -66,7 +73,10 @@ class QuestionAppState extends State<AskApp> {
                   answerSelected: _askSelected,
                   onAnswer: _response,
                 )
-              : Result(_totalPoints)),
+              : Result(
+                  _totalPoints,
+                  _resetQuiz,
+                )),
     );
   }
 }
